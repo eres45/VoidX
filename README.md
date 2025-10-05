@@ -247,9 +247,40 @@ ExoAI-Hunter/
 git clone https://github.com/eres45/VoidX.git
 cd VoidX
 
+# Download pre-trained models (required - 1GB download)
+python download_models.py
+
 # Launch entire platform (automated setup)
 python start_exoai_hunter.py
 ```
+
+### **📥 Model Download (Required)**
+
+**🚫 Why Models Aren't in GitHub:**
+- **📦 Total Model Size**: 1,039.9 MB (1.04 GB)
+- **🚫 GitHub Limits**: 100MB per file, 1GB per repository  
+- **📈 Largest Model**: Stacking Ensemble (692.9 MB)
+- **🔧 Solution**: Google Drive hosting with automated download
+
+**📊 Model Breakdown:**
+```
+perfected_stacking.pkl        692.9MB - Main stacking ensemble model
+perfected_gradient_boost.pkl  165.7MB - Gradient Boosting classifier  
+perfected_extra_trees.pkl     129.4MB - Extra Trees classifier
+perfected_random_forest.pkl    51.3MB - Random Forest classifier
+perfected_neural_network.keras  0.7MB - Neural Network model
++ 3 scaler files               <0.1MB - Preprocessing scalers
+```
+
+**📥 Download Options:**
+- **🤖 Automatic**: `python download_models.py` (recommended)
+- **📁 Manual**: [Google Drive Folder](https://drive.google.com/drive/folders/1SLu-iH4g7YL20a8sJL9kyFgG6F4Pg01T?usp=sharing)
+- **⚡ Demo Mode**: Use `--mock-models` flag for testing without full models
+
+**🎯 Model Performance:**
+- **Training Data**: 21,271 authentic NASA objects (Kepler, K2, TESS)
+- **Accuracy**: 94.51% on real NASA exoplanet data
+- **Processing Speed**: 52.6ms ultra-fast inference
 
 ### **🔧 Manual Setup**
 ```bash
