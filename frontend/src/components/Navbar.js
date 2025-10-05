@@ -21,7 +21,6 @@ import {
   Explore as ExploreIcon,
   Analytics as AnalyticsIcon,
   Info as InfoIcon,
-  RocketLaunch as RocketIcon,
 } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -100,7 +99,16 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
             style={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}
           >
-            <RocketIcon sx={{ mr: 2, fontSize: 28, color: 'secondary.main' }} />
+            <img 
+              src="/logo.png" 
+              alt="ExoAI Hunter Logo" 
+              style={{ 
+                width: 96, 
+                height: 96, 
+                marginRight: 16,
+                objectFit: 'contain'
+              }} 
+            />
             <Typography variant="h6" component="div" sx={{ fontWeight: 700 }}>
               ExoAI Hunter
             </Typography>

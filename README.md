@@ -1,5 +1,9 @@
 # 🚀 ExoAI Hunter - AI-Powered Exoplanet Detection Platform
 
+<div align="center">
+  <img src="logo.png" alt="ExoAI Hunter Logo" width="200" height="200">
+</div>
+
 [![NASA Space Apps Challenge 2025](https://img.shields.io/badge/NASA%20Space%20Apps-2025-blue.svg)](https://www.spaceappschallenge.org/)
 [![Accuracy](https://img.shields.io/badge/Accuracy-99.1%25-brightgreen.svg)](https://github.com/eres45/VoidX)
 [![Processing Speed](https://img.shields.io/badge/Processing-0.234s-yellow.svg)](https://github.com/eres45/VoidX)
@@ -478,6 +482,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### **Challenge**: "A World Away: Hunting for Exoplanets with AI"
 - **Team**: ExoAI Hunter Development Team
+  - **Ronit Shrimankar** - Lead Developer, Backend & AI Architect
+  - **Udita Singh** - Data Scientist & Frontend Developer
 - **Category**: AI/ML, Data Analysis, Space Exploration
 - **Difficulty**: Advanced
 - **Status**: ✅ **READY FOR SUBMISSION**
@@ -501,9 +507,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **🌍 Scientific Impact**: 10x speed improvement, reduced false positives
 - **📊 NASA Alignment**: Perfect compliance with challenge requirements
 
-**This platform is ready to revolutionize exoplanet discovery and represents the winning solution for NASA Space Apps Challenge 2025!**
-
-### **🏆 Predicted Score: 97/100**
+**This platform is ready to revolutionize exoplanet discovery for NASA Space Apps Challenge 2025!**
 
 **Let's hunt for new worlds! 🌍✨🚀**
 
