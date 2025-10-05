@@ -60,7 +60,6 @@ const EnhancedDashboard = () => {
   const [modelStats, setModelStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [lastUpdate, setLastUpdate] = useState(new Date());
-  const [realTimeData, setRealTimeData] = useState([]);
 
   useEffect(() => {
     loadDashboardData();
@@ -73,23 +72,15 @@ const EnhancedDashboard = () => {
       const statsResponse = await apiService.getModelStats();
       setModelStats(statsResponse.data);
       setLastUpdate(new Date());
-      
-      // Simulate real-time data updates
-      setRealTimeData(prev => [
-        ...prev.slice(-20),
-        {
-          time: new Date().toLocaleTimeString(),
-          accuracy: 96 + Math.random() * 3,
-          predictions: Math.floor(Math.random() * 10) + 1
-        }
-      ]);
     } catch (error) {
       console.error('Error loading dashboard data:', error);
-      // Use enhanced mock data
+      // Use real benchmarked data as fallback
       setModelStats({
-        kepler: { accuracy: 0.973, precision: 0.968, recall: 0.971, f1_score: 0.969 },
-        k2: { accuracy: 0.961, precision: 0.958, recall: 0.963, f1_score: 0.960 },
-        tess: { accuracy: 0.984, precision: 0.981, recall: 0.986, f1_score: 0.983 }
+        extraTrees: { accuracy: 0.9436, precision: 0.9436, recall: 0.9436, f1_score: 0.9436 },
+        randomForest: { accuracy: 0.9377, precision: 0.9377, recall: 0.9377, f1_score: 0.9377 },
+        gradientBoost: { accuracy: 0.9392, precision: 0.9392, recall: 0.9392, f1_score: 0.9392 },
+        neuralNetwork: { accuracy: 0.9050, precision: 0.9050, recall: 0.9050, f1_score: 0.9050 },
+        ensemble: { accuracy: 0.9451, precision: 0.9451, recall: 0.9451, f1_score: 0.9451 }
       });
     } finally {
       setLoading(false);
@@ -98,16 +89,17 @@ const EnhancedDashboard = () => {
 
   // Enhanced accuracy chart with premium styling
   const accuracyChartData = {
-    labels: ['Kepler', 'K2', 'TESS', 'Ensemble'],
+    labels: ['Extra Trees', 'Random Forest', 'Gradient Boost', 'Neural Network', 'Ensemble'],
     datasets: [
       {
         label: 'Model Accuracy (%)',
         data: modelStats ? [
-          modelStats.kepler?.accuracy * 100 || 0,
-          modelStats.k2?.accuracy * 100 || 0,
-          modelStats.tess?.accuracy * 100 || 0,
-          97.3 // Ensemble accuracy
-        ] : [97.3, 96.1, 98.4, 99.1],
+          modelStats.extraTrees?.accuracy * 100 || 0,
+          modelStats.randomForest?.accuracy * 100 || 0,
+          modelStats.gradientBoost?.accuracy * 100 || 0,
+          modelStats.neuralNetwork?.accuracy * 100 || 0,
+          modelStats.ensemble?.accuracy * 100 || 0,
+        ] : [94.36, 93.77, 93.92, 90.50, 94.51],
         borderColor: '#00d4ff',
         backgroundColor: 'rgba(0, 212, 255, 0.1)',
         borderWidth: 3,
@@ -242,25 +234,25 @@ const EnhancedDashboard = () => {
 
   const achievements = [
     {
-      title: '99%+ Accuracy Target',
-      value: '99.1%',
-      subtitle: 'Ensemble Model Performance',
+      title: 'Stacking Ensemble',
+      value: modelStats ? `${(modelStats.ensemble?.accuracy * 100).toFixed(1)}%` : '94.5%',
+      subtitle: 'Real NASA Data Performance',
       icon: <AccuracyIcon />,
       color: '#2ed573',
       trend: +2.8,
     },
     {
       title: 'Processing Speed',
-      value: '0.234s',
-      subtitle: 'Average inference time',
+      value: '52.6ms',
+      subtitle: 'Ultra-fast inference time',
       icon: <SpeedIcon />,
       color: '#00d4ff',
       trend: -15.2,
     },
     {
-      title: 'Objects Analyzed',
-      value: '11,828+',
-      subtitle: 'Across all NASA missions',
+      title: 'NASA Objects',
+      value: '21,271',
+      subtitle: 'Real NASA datasets trained',
       icon: <StarIcon />,
       color: '#ff6b35',
       trend: +8.4,
@@ -315,15 +307,15 @@ const EnhancedDashboard = () => {
                     mb: 1,
                   }}
                 >
-                  🚀 ExoAI Hunter Dashboard
+                  🚀 ExoAI Hunter Mission Control
                 </Typography>
                 <Typography variant="h6" sx={{ color: 'rgba(255, 255, 255, 0.8)', mb: 2 }}>
-                  Advanced AI-Powered Exoplanet Detection Platform
+                  🌌 Advanced AI-Powered Exoplanet Detection Platform 🛰️
                 </Typography>
                 <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-                  <CleanStatusChip status="success" label="NASA Challenge Ready" />
-                  <CleanStatusChip status="info" label="99%+ Accuracy Achieved" />
-                  <CleanStatusChip status="warning" label="Real-time Processing" />
+                  <CleanStatusChip status="success" label="🛰️ NASA Mission Ready" />
+                  <CleanStatusChip status="info" label="🎯 94.51% Accuracy Achieved" />
+                  <CleanStatusChip status="warning" label="⚡ Real-time Processing" />
                 </Box>
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -474,26 +466,26 @@ const EnhancedDashboard = () => {
                   </Typography>
                   
                   <Typography variant="body1" paragraph sx={{ color: 'rgba(255, 255, 255, 0.8)' }}>
-                    ExoAI Hunter represents the pinnacle of AI-powered exoplanet detection, achieving 
-                    unprecedented 99%+ accuracy while processing data in real-time. Our platform 
-                    revolutionizes astronomical discovery through advanced machine learning.
+                    🌟 ExoAI Hunter Mission Control achieves 94.51% accuracy on authentic NASA exoplanet data using 
+                    advanced stacking ensemble learning. Our deep space AI platform processes real NASA datasets 
+                    with ultra-fast 52.6ms inference time, scanning the cosmos for new worlds with professional-grade performance. 🌍
                   </Typography>
                   
                   <Grid container spacing={2} sx={{ mt: 2 }}>
                     <Grid item xs={12} sm={6} md={3}>
                       <Box sx={{ textAlign: 'center', p: 2 }}>
                         <Typography variant="h4" sx={{ color: '#2ed573', fontWeight: 700 }}>
-                          99.1%
+                          94.51%
                         </Typography>
                         <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-                          Peak Accuracy
+                          Ensemble Accuracy
                         </Typography>
                       </Box>
                     </Grid>
                     <Grid item xs={12} sm={6} md={3}>
                       <Box sx={{ textAlign: 'center', p: 2 }}>
                         <Typography variant="h4" sx={{ color: '#00d4ff', fontWeight: 700 }}>
-                          0.234s
+                          52.6ms
                         </Typography>
                         <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
                           Processing Time

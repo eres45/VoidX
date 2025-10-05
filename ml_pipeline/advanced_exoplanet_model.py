@@ -570,7 +570,7 @@ class AdvancedAccuracyCallback(callbacks.Callback):
         
         if val_accuracy >= self.threshold and not self.achieved:
             print(f"\n🎯 99% TARGET ACHIEVED! Validation accuracy {val_accuracy:.6f} >= {self.threshold}")
-            print("🏆 ExoAI Hunter has reached 99%+ accuracy! World-class performance!")
+            print("🏆 ExoAI Hunter has reached 99%+ accuracy! Exceptional performance!")
             self.achieved = True
 
 # Factory function for advanced model

@@ -101,3 +101,18 @@ tmp/
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Large datasets and models
+nasa_datasets/
+perfected_models/
+*.pkl
+*.pdf
+*.xml
+
+# Benchmark results
+benchmark_results_*.pkl
+
+# Research papers
+electronics-*.pdf
+electronics-*.xml
+NASA*.pdf

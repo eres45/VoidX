@@ -37,19 +37,25 @@ class ExoAIHunterLauncher:
         ║         NASA Space Apps Challenge 2025 Project              ║
         ║        "A World Away: Hunting for Exoplanets with AI"       ║
         ╚══════════════════════════════════════════════════════════════╝
-        
-        🎯 Mission: Achieve >95% accuracy in exoplanet detection
-        🛰️  Datasets: Kepler, K2, TESS missions
-        🤖 AI Models: CNN + Transformer with attention mechanisms
-        🌐 Interface: Real-time web platform
-        
+        🚀 ExoAI Hunter - AI-Powered Exoplanet Detection Platform
+        NASA Space Apps Challenge 2025
+
+        🎯 Mission: ExoAI Hunter achieving 94.51% accuracy on authentic NASA data
+        with advanced ensemble learning and professional-grade performance.
+
+        🏆 Key Achievements:
+        - 94.51% accuracy on real NASA exoplanet datasets (21,000+ objects)
+        - Advanced ensemble: Extra Trees (94.36%) + Gradient Boosting (93.92%) + Random Forest (93.77%) + Neural Network (90.50%)
+        - Multi-mission support (Kepler, TESS, K2) with authentic NASA data
+        - Professional stacking ensemble with meta-learning
+        - Real-time processing with premium web interface
+        - Complete model diversity: Tree models + Deep learning
         """
         print(banner)
     
     def check_system_requirements(self):
         """Check if system has required dependencies"""
         print("🔍 Checking system requirements...")
-        
         requirements = {
             'python': {'cmd': 'python --version', 'min_version': '3.9'},
             'node': {'cmd': 'node --version', 'min_version': '16.0'},
