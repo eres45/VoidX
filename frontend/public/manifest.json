@@ -1,0 +1,16 @@
+{
+  "short_name": "ExoAI Hunter",
+  "name": "ExoAI Hunter - AI-Powered Exoplanet Detection Platform",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0a0a2e",
+  "background_color": "#0f3460",
+  "description": "AI-Powered Exoplanet Detection Platform for NASA Space Apps Challenge 2025"
+}

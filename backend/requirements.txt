@@ -1,0 +1,43 @@
+# FastAPI Backend Dependencies for ExoAI Hunter
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Machine Learning & Data Science
+tensorflow==2.17.0
+scikit-learn==1.3.2
+numpy==1.26.4  # Updated for Python 3.12 compatibility
+pandas==2.1.4
+matplotlib==3.8.2
+seaborn==0.13.0
+plotly==5.17.0
+
+# Database & Storage
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.23
+alembic==1.13.1
+
+# Data Processing
+astropy==6.0.0
+lightkurve==2.4.2
+scipy==1.11.4
+
+# API & Web
+requests==2.31.0
+httpx==0.25.2
+python-jose[cryptography]==3.3.0
+python-multipart==0.0.6
+
+# Utilities
+python-dotenv==1.0.0
+loguru==0.7.2
+tqdm==4.66.1
+joblib==1.3.2
+
+# Development & Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+black==23.11.0
+flake8==6.1.0
